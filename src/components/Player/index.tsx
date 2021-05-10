@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef, useEffect } from "react";
 
 import { PlayerContext } from "../../contexts/ContextPlayer";
 
@@ -18,10 +18,28 @@ import {
 } from "./styles";
 
 const Player: React.FC = () => {
-  const { currentEpisodeIndex, episodeList } = useContext(PlayerContext);
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const {
+    currentEpisodeIndex,
+    episodeList,
+    isPlaying,
+    togglePlay,
+    setPlaying,
+  } = useContext(PlayerContext);
 
   const episode = episodeList[currentEpisodeIndex];
-  console.log(episode);
+
+  useEffect(() => {
+    if (!audioRef.current) {
+      return;
+    }
+
+    if (isPlaying) {
+      audioRef.current.play();
+    } else {
+      audioRef.current.pause();
+    }
+  }, [isPlaying]);
 
   return (
     <Container>
@@ -60,6 +78,17 @@ const Player: React.FC = () => {
 
           <span>00:00</span>
         </Progress>
+        {episode && (
+          <audio
+            src={episode.url}
+            autoPlay
+            ref={audioRef}
+            onPlay={() => setPlaying(true)}
+            onPause={() => {
+              setPlaying(false);
+            }}
+          />
+        )}
         <WrapperButton>
           <Button disabled={!episode}>
             <img src="/shuffle.svg" alt="misturar" />
@@ -67,8 +96,12 @@ const Player: React.FC = () => {
           <Button disabled={!episode}>
             <img src="/play-previous.svg" alt="tocar anterior" />
           </Button>
-          <PlayButton disabled={!episode}>
-            <img src="/play.svg" alt="play" />
+          <PlayButton disabled={!episode} onClick={togglePlay}>
+            {isPlaying ? (
+              <img src="/pause.svg" alt="play" />
+            ) : (
+              <img src="/play.svg" alt="play" />
+            )}
           </PlayButton>
           <Button disabled={!episode}>
             <img src="/play-next.svg" alt="tocar proximo" />
