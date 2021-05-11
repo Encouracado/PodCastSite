@@ -1,4 +1,5 @@
 import { GetStaticProps } from "next";
+import Head from "next/head";
 import Link from "next/link";
 import { useContext } from "react";
 import { PlayerContext } from "../contexts/ContextPlayer";
@@ -38,14 +39,19 @@ type HomeProps = {
 };
 
 export default function Home({ latestEpisodes, AllEpisodes }: HomeProps) {
-  const { playEpisode } = useContext(PlayerContext);
+  const { playList } = useContext(PlayerContext);
+
+  const episodeList = [...latestEpisodes, ...AllEpisodes];
 
   return (
     <Homepage>
+      <Head>
+        <title>Bem Vindo ao PordCastr</title>
+      </Head>
       <LatestEpisodes>
         <h2>Últimos Lançamentos</h2>
         <ul>
-          {latestEpisodes.map((episode) => {
+          {latestEpisodes.map((episode, index) => {
             return (
               <li key={episode.id}>
                 <img src={episode.thumbnail} alt={episode.title} />
@@ -61,7 +67,7 @@ export default function Home({ latestEpisodes, AllEpisodes }: HomeProps) {
                 <PlayButton
                   type="button"
                   onClick={() => {
-                    playEpisode(episode);
+                    playList(episodeList, index);
                   }}
                 >
                   <img src="/play-green.svg" alt="escutar" />
@@ -85,7 +91,7 @@ export default function Home({ latestEpisodes, AllEpisodes }: HomeProps) {
             </tr>
           </thead>
           <tbody>
-            {AllEpisodes.map((episode) => {
+            {AllEpisodes.map((episode, index) => {
               return (
                 <tr key={episode.id}>
                   <TdTablePodCasts>
@@ -102,7 +108,12 @@ export default function Home({ latestEpisodes, AllEpisodes }: HomeProps) {
                   </TdTablePodCasts>
                   <TdTablePodCasts>{episode.durationAsString}</TdTablePodCasts>
                   <TdTablePodCasts>
-                    <PlayButtonTable type="button">
+                    <PlayButtonTable
+                      type="button"
+                      onClick={() =>
+                        playList(episodeList, index + latestEpisodes.length)
+                      }
+                    >
                       <img src="/play-green.svg" alt="escutar" />
                     </PlayButtonTable>
                   </TdTablePodCasts>

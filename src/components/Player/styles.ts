@@ -27,7 +27,8 @@ export const Container = styled.div`
   >footer{
     align-self: stretch;
 
-    &.empty{
+    &:empty{
+      //VOCE PRECISA ARRUMAR ESTA CLASE, ELA NAO ESTA FUNCIONANDO
       opacity:0.6;
     }
   }
@@ -138,6 +139,7 @@ transition: filter 0.2s;
 
 &:disabled{
   cursor:not-allowed;
+  opacity: 0.5;
 }
 
 &:hover:not(:disabled){
@@ -167,6 +169,7 @@ transition: filter 0.2s;
 
 &:disabled{
   cursor:not-allowed;
+  opacity:0.5;
 }
 
 `;

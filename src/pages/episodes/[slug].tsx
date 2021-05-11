@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { GetStaticProps, GetStaticPaths } from "next";
+import Head from "next/head";
 import Link from "next/link";
 import api from "../../services/api";
 import ptBr from "date-fns/locale/pt-BR";
@@ -14,6 +15,7 @@ import {
   HeaderEpisodeDetails,
   EpisodeDescription,
 } from "./styles";
+import { PlayerContext } from "../../contexts/ContextPlayer";
 
 type Episode = {
   id: string;
@@ -32,8 +34,12 @@ type EpisodeProps = {
 };
 
 export default function Episode({ episode }: EpisodeProps) {
+  const { playEpisode } = useContext(PlayerContext);
   return (
     <Container>
+      <Head>
+        <title>{episode.title} || Podcastr</title>
+      </Head>
       <ThumbnailContainer>
         <Link href={"/"}>
           <ButtonBack type="button">
@@ -41,7 +47,7 @@ export default function Episode({ episode }: EpisodeProps) {
           </ButtonBack>
         </Link>
         <img src={episode.thumbnail} />
-        <PlayButton>
+        <PlayButton onClick={() => playEpisode(episode)}>
           <img src="/play.svg" alt="tocar" />
         </PlayButton>
       </ThumbnailContainer>
