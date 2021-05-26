@@ -21,6 +21,15 @@
     --purple-800: #6F48C9;
   }
 
+.dark{
+    background: #1E1B1B;
+    color:#DED9D9;
+}
+.light{
+    
+    color: var(--gray-50);
+}
+
 @media(max-width: 1080px){
    html{
        font-size: 93.75%;

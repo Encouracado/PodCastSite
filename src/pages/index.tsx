@@ -3,6 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useContext } from "react";
 import { PlayerContext } from "../contexts/ContextPlayer";
+import { ThemeContext } from "../contexts/ThemeContext";
 import { format, parseISO } from "date-fns";
 import { ConvertDurationToTimeString } from "../utils/ConvertDurationToTimeString";
 import ptBr from "date-fns/locale/pt-BR";
@@ -19,6 +20,8 @@ import {
   ThTablePodcasts,
   TdTablePodCasts,
   PlayButtonTable,
+  SunIcon,
+  ButtonTheme,
 } from "./homeStyles";
 
 type Episodes = {
@@ -40,6 +43,7 @@ type HomeProps = {
 
 export default function Home({ latestEpisodes, AllEpisodes }: HomeProps) {
   const { playList } = useContext(PlayerContext);
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
   const episodeList = [...latestEpisodes, ...AllEpisodes];
 
@@ -48,6 +52,15 @@ export default function Home({ latestEpisodes, AllEpisodes }: HomeProps) {
       <Head>
         <title>Bem Vindo ao PordCastr</title>
       </Head>
+      <ButtonTheme
+        type="button"
+        onClick={() => {
+          toggleTheme();
+        }}
+      >
+        <SunIcon />
+      </ButtonTheme>
+
       <LatestEpisodes>
         <h2>Últimos Lançamentos</h2>
         <ul>

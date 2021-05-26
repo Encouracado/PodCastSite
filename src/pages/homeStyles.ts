@@ -1,5 +1,6 @@
-import styled from 'styled-components';
-
+import styled, {css} from 'styled-components';
+import {HiSun} from 'react-icons/hi'
+ 
 export const Homepage = styled.div`
   padding: 0 4rem;
   height: calc(100vh - 6.5rem);
@@ -204,3 +205,25 @@ export const ImageTable = styled.img`
 
 `;
 
+
+const IconCss = css`
+
+width:2rem;
+height: 2rem;
+
+
+background: white;
+color: yellow;
+
+
+
+`;
+
+export const SunIcon = styled(HiSun)`${IconCss}
+`;
+
+export const ButtonTheme = styled.button`
+border:none;
+background:  none;
+
+`;
