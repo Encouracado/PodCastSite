@@ -20,8 +20,6 @@ import {
   ThTablePodcasts,
   TdTablePodCasts,
   PlayButtonTable,
-  SunIcon,
-  ButtonTheme,
 } from "./homeStyles";
 
 type Episodes = {
@@ -43,7 +41,6 @@ type HomeProps = {
 
 export default function Home({ latestEpisodes, AllEpisodes }: HomeProps) {
   const { playList } = useContext(PlayerContext);
-  const { theme, toggleTheme } = useContext(ThemeContext);
 
   const episodeList = [...latestEpisodes, ...AllEpisodes];
 
@@ -52,14 +49,6 @@ export default function Home({ latestEpisodes, AllEpisodes }: HomeProps) {
       <Head>
         <title>Bem Vindo ao PordCastr</title>
       </Head>
-      <ButtonTheme
-        type="button"
-        onClick={() => {
-          toggleTheme();
-        }}
-      >
-        <SunIcon />
-      </ButtonTheme>
 
       <LatestEpisodes>
         <h2>Últimos Lançamentos</h2>

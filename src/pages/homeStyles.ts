@@ -1,10 +1,11 @@
 import styled, {css} from 'styled-components';
-import {HiSun} from 'react-icons/hi'
+
  
 export const Homepage = styled.div`
   padding: 0 4rem;
   height: calc(100vh - 6.5rem);
   overflow-y: scroll;
+  
 
   >h2{
       margin-top:3rem;
@@ -19,13 +20,14 @@ export const LatestEpisodes = styled.section`
   margin-bottom: 1rem;
 }
 >ul{
-    
+  
     list-style: none;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
 
     >li{
+       
        background: var(--white);
        border: 1px solid var(--gray-100);
        padding: 1rem;
@@ -206,24 +208,3 @@ export const ImageTable = styled.img`
 `;
 
 
-const IconCss = css`
-
-width:2rem;
-height: 2rem;
-
-
-background: white;
-color: yellow;
-
-
-
-`;
-
-export const SunIcon = styled(HiSun)`${IconCss}
-`;
-
-export const ButtonTheme = styled.button`
-border:none;
-background:  none;
-
-`;

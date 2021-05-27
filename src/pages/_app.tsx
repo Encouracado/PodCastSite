@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }) {
     <PlayerContexProvider>
       <ThemeContextProvider>
         <Wrapper>
-          <main>
+          <main id="ToggleTheme">
             <Header />
             <Component {...pageProps} />
           </main>

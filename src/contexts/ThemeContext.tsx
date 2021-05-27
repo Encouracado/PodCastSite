@@ -35,11 +35,11 @@ export function ThemeContextProvider({ children }: ThemeContextProviderProps) {
       localStorage.getItem("theme") === "light"
     ) {
       localStorage.theme = "dark";
-      document.querySelector("html").classList.add("dark");
+      document.getElementById("ToggleTheme").classList.add("dark");
       setTheme("dark");
     } else {
       localStorage.theme = "light";
-      document.querySelector("html").classList.remove("dark");
+      document.getElementById("ToggleTheme").classList.remove("dark");
       setTheme("light");
     }
     console.log(theme);
