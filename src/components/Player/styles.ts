@@ -90,15 +90,17 @@ export const Progress = styled.div`
  align-items: center;
  gap:0.5rem;
  font-size:0.875rem;
+ justify-content: center;
 
 
 
  span{
+   
    display: inline-block;
    width: 4rem;
    text-align: center;
    &:last-child{
-    margin-right: 2rem;
+ 
    }
  }
 
@@ -115,6 +117,7 @@ export const EmptySlider = styled.div`
 export const SliderContainer = styled.div`
 
 flex: 1;
+
 
 `;
 export const WrapperButton = styled.div`
