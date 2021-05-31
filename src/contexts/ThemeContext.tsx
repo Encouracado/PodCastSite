@@ -14,26 +14,8 @@ type ThemeContextProviderProps = {
 export function ThemeContextProvider({ children }: ThemeContextProviderProps) {
   const [theme, setTheme] = useState("light");
 
-  useEffect(() => {
-    if (
-      localStorage.getItem("theme") === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
-      document.querySelector("html").classList.add("dark");
-      setTheme("dark");
-    } else {
-      document.querySelector("html").classList.remove("dark");
-      setTheme("light");
-    }
-    console.log(theme);
-  }, []);
-
   function toggleTheme() {
-    if (
-      !localStorage.getItem("theme") ||
-      localStorage.getItem("theme") === "light"
-    ) {
+    if (localStorage.getItem("theme") === "light") {
       localStorage.theme = "dark";
       document.getElementById("ToggleTheme").classList.add("dark");
       setTheme("dark");

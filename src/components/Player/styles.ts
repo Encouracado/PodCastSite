@@ -99,9 +99,9 @@ export const Progress = styled.div`
    display: inline-block;
    width: 4rem;
    text-align: center;
-   &:last-child{
- 
-   }
+   //&:last-child{
+   // retirado o margin right para centralizar o player
+   //}
  }
 
 `;

@@ -22,7 +22,9 @@ export default function Header() {
       {theme === "light" ? (
         <img src="logo.svg" alt="podcast" />
       ) : (
-        <span style={{ color: "white" }}>Podcastr</span>
+        <>
+          <span style={{ color: "white" }}>Podcastr</span>
+        </>
       )}
 
       <Paragraph>The Best Podcast</Paragraph>

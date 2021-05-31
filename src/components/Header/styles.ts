@@ -30,7 +30,20 @@ export const Paragraph = styled.p`
 
 `;
 
-const IconCss = css`
+const IconCssSun = css`
+
+width:2.85rem;
+height: 2.85rem;
+
+
+background: none;
+color: #d8e342;
+
+margin-left: 21rem;
+
+`;
+
+const IconCssMoon = css`
 
 width:2rem;
 height: 2rem;
@@ -39,17 +52,19 @@ height: 2rem;
 background: none;
 color: #d8e342;
 
-margin-left: 22rem;
+margin-left: 26rem;
 
 `;
 
-export const SunIcon = styled(HiSun)`${IconCss}
+export const SunIcon = styled(HiSun)`${IconCssSun}
 `;
-export const MoonIcon = styled(RiMoonClearLine)`${IconCss}`;
+export const MoonIcon = styled(RiMoonClearLine)`${IconCssMoon}`;
 
 export const ButtonTheme = styled.button`
 border:none;
 background:  none;
 
 `;
+
+
 
