@@ -3,9 +3,14 @@ import styled from 'styled-components';
 export const Container = styled.div`
   width:12.5rem;
   padding: 2rem 4rem;
-  height: 90.8vh;
+  height: 90.75vh;
+ 
+  position: fixed left;
+   
+
 
   overflow-y: hidden;
+
   
   background: var(--purple-500);
   color: var(--white);

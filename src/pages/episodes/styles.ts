@@ -4,6 +4,8 @@ export const Container = styled.div`
   max-width:45rem;
   padding: 3rem 2rem;
   margin: 0 auto;
+  
+  
 `;
 
 export const ThumbnailContainer = styled.div`
