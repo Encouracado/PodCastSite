@@ -11,6 +11,10 @@ export const Homepage = styled.div`
       margin-top:3rem;
       margin-bottom: 1.5rem;
   }
+ @media(max-width: 800px){
+  
+     width:400px;
+ }
 `;
 
 export const LatestEpisodes = styled.section`

@@ -7,6 +7,7 @@ import {
   SunIcon,
   ButtonTheme,
   MoonIcon,
+  LogoTHemeDarkIcon,
 } from "./styles";
 import { ThemeContext } from "../../contexts/ThemeContext";
 
@@ -23,7 +24,7 @@ export default function Header() {
         <img src="logo.svg" alt="podcast" />
       ) : (
         <>
-          <span style={{ color: "white" }}>Podcastr</span>
+          <LogoTHemeDarkIcon />
         </>
       )}
 

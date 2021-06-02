@@ -1,6 +1,7 @@
 import styled, {css} from 'styled-components';
 import {HiSun} from 'react-icons/hi'
-import {RiMoonClearLine} from 'react-icons/ri';
+import {RiMoonClearLine, RiHeadphoneFill} from 'react-icons/ri';
+
 
 export const ContainerHeader = styled.header`
    background: var(--gray-50);
@@ -19,6 +20,12 @@ export const ContainerHeader = styled.header`
         text-transform: capitalize;
 
     }
+    @media(max-width: 800px){
+     display: flex;
+     justify-content: space-between;
+     width:400px;
+    }
+  
 `;
 
 export const Paragraph = styled.p`
@@ -26,7 +33,10 @@ export const Paragraph = styled.p`
   margin-left: 2rem;
   padding: 0.25rem 0 0.25rem 2rem;
   border-left: 1px solid var(--gray);
-  
+
+  @media(max-width: 800px){
+    
+  }
 
 `;
 
@@ -40,6 +50,11 @@ background: none;
 color: #d8e342;
 
 margin-left: 21rem;
+
+@media(max-width:800px){
+  margin-left: 12rem;
+  margin-right: 1rem;
+}
 
 
 
@@ -56,6 +71,19 @@ color: #d8e342;
 
 margin-left: 26rem;
 
+@media(max-width:800px){
+  margin-left: 23.5rem;
+  margin-right: 1rem;
+}
+
+
+`;
+
+const IconCssLogo = css`
+color: var(--green-500);
+width:5rem;
+height: 5rem;
+background: none;
 `;
 
 export const SunIcon = styled(HiSun)`${IconCssSun}
@@ -67,6 +95,8 @@ border:none;
 background:  none;
 
 `;
+
+export const LogoTHemeDarkIcon = styled(RiHeadphoneFill)`${IconCssLogo}`;
 
 
 

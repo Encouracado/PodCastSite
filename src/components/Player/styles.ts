@@ -4,14 +4,9 @@ export const Container = styled.div`
   width:12.5rem;
   padding: 2rem 4rem;
   height: 90.75vh;
- 
-  position: fixed left;
-   
-
 
   overflow-y: hidden;
 
-  
   background: var(--purple-500);
   color: var(--white);
 
@@ -36,6 +31,9 @@ export const Container = styled.div`
       //VOCE PRECISA ARRUMAR ESTA CLASE, ELA NAO ESTA FUNCIONANDO
       opacity:0.6;
     }
+  }
+  @media(max-width: 800px){
+    width:100%;
   }
 `;
 
