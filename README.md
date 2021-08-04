@@ -12,7 +12,6 @@ Executei o projeto conforme a abordagem da equipe porém estou incluindo feature
 
 - [x] Estilização da pagina feita com styled-components
 - [x] Opcinal de modo Dark para o usuario
-- [ ] Responsividade
 
 <h3>Technologies</h3>
 <ul>
